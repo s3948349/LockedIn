@@ -1,30 +1,15 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+import * as React from "react";
+import * as ReactDOM from "react-dom/client"; // Importing ReactDOM
 import './index.css';
 import App from './App';
-import HomePage from './HomePage';
 import reportWebVitals from './reportWebVitals';
 
-const rootElement = document.getElementById('root');
-const root = ReactDOM.createRoot(rootElement);
+// Creating a root to render the app into
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function Main() {
-  const [animationDone, setAnimationDone] = useState(false);
+// Rendering the App component into the root
+root.render(<App />);
 
-  const handleAnimationEnd = () => {
-    setAnimationDone(true); // This function will be called when the animation in App finishes
-  };
-
-  return (
-    <React.StrictMode>
-      {!animationDone ? <App onAnimationEnd={handleAnimationEnd} /> : <HomePage />}
-    </React.StrictMode>
-  );
-}
-
-root.render(<Main />);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Running the function to report web vitals
 reportWebVitals();
+

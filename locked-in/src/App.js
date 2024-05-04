@@ -5,14 +5,7 @@ import Homepage from './HomePage';
 import Animation from './Animation';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-function App({ onAnimationEnd }) {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      onAnimationEnd();
-    }, 5000); // The duration matches the CSS animation time.
-
-    return () => clearTimeout(timer);
-  }, [onAnimationEnd]);
+function App() {
 
   return (
     <>
