@@ -1,2 +1,2 @@
-ID, Name, Uni, Course, Year, Goals, Platform
-0, 'Admin', 'RMIT', 'Computer Science', 1, 'Project', 'Online'
+ID, Name, Password, Uni, Course, Year, Goals, Platform
+0, 'Admin','Password', 'RMIT', 'Computer Science', 1, 'Project', 'Online'
