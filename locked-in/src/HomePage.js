@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './HomePage.css';
 
 function Homepage() {
     const numStars = 100; // Number of stars you want
+    const navigate = useNavigate();
 
     // Function to generate random positions for stars
     const randomPosition = () => {
@@ -16,6 +18,11 @@ function Homepage() {
         left: randomPosition(),
         animationDelay: `${Math.random() * 2}s`
     }));
+
+    const goToForm = () => {
+        // This will cause the browser to load a new page and drop all React states
+        navigate("/Form") ;   
+    }
 
     return (
     <div className="HomePage-body">
@@ -35,8 +42,8 @@ function Homepage() {
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
         <link href="https://fonts.googleapis.com/css2?family=Cantora+One&family=Contrail+One&display=swap" rel="stylesheet"></link>
-        <div className="home-text">Ready?</div>
-        <button className="lock-in-button">Lock in</button>
+        <div className="home-text">Ready?
+        <button className="lock-in-button" onClick={goToForm}>Lock in</button></div>
     </div>
     );
 }

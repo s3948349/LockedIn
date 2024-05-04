@@ -12,4 +12,3 @@ root.render(<App />);
 
 // Running the function to report web vitals
 reportWebVitals();
-

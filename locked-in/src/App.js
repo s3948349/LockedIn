@@ -4,6 +4,7 @@ import './App.css';
 import Homepage from './HomePage';
 import Animation from './Animation';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Form from './Form';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
       <Route path ="/" element = {<Animation/>} />
       <Route path ="/Home" element = {<Homepage/>} />
+      <Route path="/Form" element = {<Form/>} />
       </Routes>
     </Router>
     </>
