@@ -1,11 +1,10 @@
-import React from 'react';
+import logo from './logo.png';
 import './App.css';
-import Homepage from './HomePage';  // Ensure you import the Homepage component
 
 function App() {
   return (
     <div className="App">
-      <Homepage />
+      <img src={logo} className="logo" alt="logo" />
     </div>
   );
 }
