@@ -1,0 +1,39 @@
+.Logo-box {
+  height: 100vh; /* Use viewport height to ensure the div takes full height of the viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  overflow: hidden;
+  position: relative; /* Ensures proper positioning context */
+}
+
+.Logo {
+  width: 100%; /* Ensures the logo container fits its content to the parent */
+  max-width: 20%; /* Max-width for scaling */
+  max-height: 20%; /* Max-height for scaling */
+  position: absolute; /* Positioned absolutely within its parent to align properly */
+}
+
+img {
+  width: 100%; /* Ensures the image scales within its container */
+  animation: vanishIn 5s ease-out;
+}
+
+@keyframes vanishIn {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(2);
+    filter: blur(90px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  90% {
+    opacity: 0.8;
+    transform: scale(0.5);
+    filter: blur(45px);
+  }
+}
