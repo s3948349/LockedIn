@@ -17,6 +17,7 @@ function Homepage() {
     }));
 
     return (
+    <div className="HomePage-body">
         <div className="stars">
             {stars.map(star => (
                 <span
@@ -30,6 +31,7 @@ function Homepage() {
                 ></span>
             ))}
         </div>
+    </div>
     );
 }
 

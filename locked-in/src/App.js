@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import logo from './logo.png';
 import './App.css';
+import Homepage from './HomePage';
+import Animation from './Animation';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App({ onAnimationEnd }) {
   useEffect(() => {
@@ -12,9 +15,16 @@ function App({ onAnimationEnd }) {
   }, [onAnimationEnd]);
 
   return (
-    <div className="App">
-      <img src={logo} className="logo" alt="logo" />
-    </div>
+    <>
+    <>
+    <Router>
+      <Routes>
+      <Route path ="/" element = {<Animation/>} />
+      <Route path ="/Home" element = {<Homepage/>} />
+      </Routes>
+    </Router>
+    </>
+    </>
   );
 }
 
