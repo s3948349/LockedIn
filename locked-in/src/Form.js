@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+import { useNavigate } from 'react-router-dom';
 import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Select, FormControl, FormLabel, Checkbox, Button, Text, Container } from '@chakra-ui/react'
 import './App.css';
 
@@ -11,6 +12,12 @@ function Form() {
     const [platform, setPlatform] = useState([]);
     const [preference, setPreference] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+
+    const navigate = useNavigate();
+
+    const goToCards = () => {
+        navigate("/Cards") ;   
+    }
 
     const handleNext = () => {
         if (isValidInput()) {
@@ -158,8 +165,8 @@ function Form() {
                 {errorMessage && <Text color="#F7418F" mb="4">{errorMessage}</Text>}
                 <Box display="flex" justifyContent="space-between" mt="4">
                     <Button colorScheme="pink" variant="outline" onClick={handleBack} isDisabled={tabIndex === 0}>Back</Button>
-                    <Button colorScheme="pink" onClick={handleNext} isDisabled={tabIndex === 5}>Next</Button>
-                </Box>
+                    <Button colorScheme="pink" onClick={tabIndex === 5 ? goToCards : handleNext} isDisabled={tabIndex === 6}>Next</Button>                
+            </Box>
             </Box>
         </Container>
     );
