@@ -9,13 +9,11 @@
 }
 
 .Logo {
+  top: 32%; 
   width: 100%; /* Ensures the logo container fits its content to the parent */
   max-width: 20%; /* Max-width for scaling */
   max-height: 20%; /* Max-height for scaling */
   position: absolute; /* Positioned absolutely within its parent to align properly */
-}
-
-img {
   width: 100%; /* Ensures the image scales within its container */
   animation: vanishIn 5s ease-out;
 }

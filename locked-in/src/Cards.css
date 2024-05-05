@@ -1,0 +1,62 @@
+.card-body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%; 
+  }
+
+.x-icon, .check-icon {
+    padding: 15%;
+    size: 20%;
+    color: #FFF8E3;
+    font-size: 4rem;
+    
+}
+
+.match-counter {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: #FFF8E3; /* Adjust color to match your design */
+    z-index: 100;
+
+}
+
+.x-icon:hover, .check-icon:hover {
+    cursor: pointer;
+    color: #F7418F;
+}
+
+  .card {
+    box-shadow: 0 0 6px 6px #F7418F; /* Pink shadow evenly around the card */
+    background-color: #FFF8E3;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    padding-right: 0%;
+    padding-left: 0%;
+    outline: none;
+  }
+
+  .Heading {
+    text-align: center;
+    font-size: xx-large;
+    padding-top: 8%;
+  }
+
+  .Text {
+    font-size: x-large;
+    text-align: center;
+    padding: 1%;
+    padding-top: 4%;
+  }
+
+  .Image {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 6px #828282; /* Pink shadow evenly around the card */
+    margin: 10px; /* Adds margin around the image for the shadow */
+
+  }
+  
