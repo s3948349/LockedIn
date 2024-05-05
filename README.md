@@ -4,9 +4,9 @@ LockedIn is a study buddy matching app designed to help students find like-minde
 
 ## Features
 
-- **User Profiles:** Users can create detailed profiles including their university name, study level, discipline, and preferred mode of meeting.
-- **Matching Algorithm:** LockedIn's algorithm calculates a similarity score based on user preferences, ensuring that matches are relevant and compatible.
-- **Match Recommendations:** Users receive recommendations of potential study buddies based on their similarity score.
+- **User Profiles:** Users create a profile detailing parameters (name, university, goal, level, discipline, platform) and a unique generated ID.
+- **Matching Algorithm:** LockedIn's algorithm becomes smarter the more uses it gets. The more users use it, the smarter recommendations it gives by adding weight to the more popular attribute for new users regardless of preference.
+- **Match Recommendations:** Users receive recommendations of potential study buddies based on their similarity score and user-provided preferences.
 - **Matching:** Users can swipe through potential matches and choose to connect with those they're interested in studying with.
 
 ## Installation
