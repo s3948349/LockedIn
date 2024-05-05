@@ -91,3 +91,22 @@
         opacity: 0.1;
     }
   }
+
+  .custom-dropdown {
+    background-color: #000; /* Black background */
+    border: 1px solid #ff0080; /* Bright pink border */
+    color: #fff; /* White text color */
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.custom-dropdown:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff0080; /* Glowing effect on focus */
+}
+
+/* Styles for the options within the dropdown */
+.custom-dropdown option {
+    background: #000; /* Ensuring options are also styled */
+    color: #fff; /* White text for options */
+}

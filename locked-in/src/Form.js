@@ -90,7 +90,8 @@ function Form() {
                         <TabPanel>
                             <FormControl>
                                 <FormLabel htmlFor='university'>Choose University</FormLabel>
-                                <Select id='university' value={university} onChange={e => setUniversity(e.target.value)}>
+                                <Select id='university' value={university} onChange={e => setUniversity(e.target.value)} 
+                                className="custom-dropdown">
                                     <option value=''>Select an option</option>
                                     <option value='RMIT'>RMIT University</option>
                                     <option value='Monash'>Monash University</option>
@@ -105,7 +106,8 @@ function Form() {
                         <TabPanel>
                             <FormControl>
                                 <FormLabel htmlFor='goal'>Select Your Goal</FormLabel>
-                                <Select id='goal' value={goal} onChange={e => setGoal(e.target.value)}>
+                                <Select id='goal' value={goal} onChange={e => setGoal(e.target.value)}
+                                className="custom-dropdown">
                                     <option value=''>Select an option</option>
                                     <option value='general'>General Study</option>
                                     <option value='community'>Community Building</option>
@@ -118,7 +120,8 @@ function Form() {
                         <TabPanel>
                             <FormControl>
                                 <FormLabel htmlFor='level'>Select University Level</FormLabel>
-                                <Select id='level' value={level} onChange={e => setLevel(e.target.value)}>
+                                <Select id='level' value={level} onChange={e => setLevel(e.target.value)}
+                                className="custom-dropdown">
                                     <option value=''>Select an option</option>
                                     <option value='undergrad'>Undergraduate</option>
                                     <option value='grad'>Graduate</option>
@@ -130,7 +133,8 @@ function Form() {
                         <TabPanel>
                             <FormControl>
                                 <FormLabel htmlFor='discipline'>Choose Discipline</FormLabel>
-                                <Select id='discipline' value={discipline} onChange={e => setDiscipline(e.target.value)}>
+                                <Select id='discipline' value={discipline} onChange={e => setDiscipline(e.target.value)}
+                                className="custom-dropdown">
                                     <option value=''>Select an option</option>
                                     <option value='stem'>STEM</option>
                                     <option value='art'>Art</option>
@@ -151,7 +155,8 @@ function Form() {
                             <TabPanel>
                             <FormControl>
                                 <FormLabel htmlFor='preference'>Select Your Preference</FormLabel>
-                                <Select id='preference' value={preference} onChange={e => setPreference(e.target.value)}>
+                                <Select id='preference' value={preference} onChange={e => setPreference(e.target.value)}
+                                className="custom-dropdown">
                                     <option value=''>Select an option</option>
                                     <option value='university'>University</option>
                                     <option value='discipline'>Discipline</option>
