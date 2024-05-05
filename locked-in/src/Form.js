@@ -13,11 +13,20 @@ function Form() {
     const [preference, setPreference] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
+    function generateRandomID() {
+        const randomID = Math.floor(100000 + Math.random() * 900000);
+        return randomID.toString();
+    }
+    
+    // Example usage:
+    const randomID = generateRandomID();
+
     const navigate = useNavigate();
 
     const goToCards = () => {
         navigate("/Cards") ;   
     }
+
 
     const handleNext = () => {
         if (isValidInput()) {
