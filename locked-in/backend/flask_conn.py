@@ -35,6 +35,19 @@ def array():
             result.append(line)
     return jsonify(result)
 
+@app.route("/write", methods =['POST'])
+def write():
+    name = request.json['name']
+    uni = request.json['uni']
+    discipline = request.json['discipline']
+    level = request.json['level']
+    goal = request.json['goal']
+    platform = request.json['platform']
+    preference = request.json['preference']
+
+    with open(r"../src/data/data.csv", 'a', newline='') as f:
+        f.write(f"{name},{uni},{discipline},{level},{goal},{platform},{preference}\n")
+    return jsonify({'message': 'Data written successfully'})
 
 if __name__ == '__main__':
     app.run(debug=True)
