@@ -3,12 +3,13 @@ import subprocess
 
 app = Flask(__name__)
 
-@app.route('/execute_script')
-def execute_script():
+@app.route("/execute")
+def execute():
     # TODO change the script path and args
     script_path = ''
     arg1 = 'value1'
     arg2 = 'value2'
+    print('hello world')
 
     # Execute the Python script with arguments
     try:
@@ -20,4 +21,4 @@ def execute_script():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
