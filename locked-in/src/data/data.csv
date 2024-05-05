@@ -1,20 +1,21 @@
-ID,Name,University,Discipline,Goal,Platform,Preference, Pfp
-101,Anna,Monash,Undergrad,Projects,Physical,Uni, https://st2.depositphotos.com/4431055/7494/i/450/depositphotos_74940665-Student-University-College-Student..jpg,
-202,Ben,Deakin,Postgrad,General,Virtual,Discipline, https://img.freepik.com/premium-photo/portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg,
-303,Chloe,Swinburne,Doctorate,Community,Hybrid,Goal, https://freedesignfile.com/upload/2017/11/Young-female-college-student-Stock-Photo.jpg,
-404,Dan,La Trobe,Undergrad,Projects,Physical,Platform, https://c8.alamy.com/comp/EHW7GE/sad-student-EHW7GE.jpg,
-505,Ella,Unimelb,Postgrad,General,Virtual,Uni, https://media.istockphoto.com/id/1500285927/photo/young-woman-a-university-student-studying-online.webp?b=1&s=170667a&w=0&k=20&c=w6oDn8-ru4jZhnnEt8AI6KdlgCJIgaaEZ4IMV50DnsQ=,
-606,Frank,RMIT,Doctorate,Community,Hybrid,Discipline, https://static.vecteezy.com/system/resources/thumbnails/003/905/045/small/male-student-portrait-isolated-on-blue-background-pointing-photo.jpg,
-707,Grace,Deakin,Undergrad,Projects,Physical,Goal, https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585_1280.jpg,
-808,Hugo,Monash,Postgrad,General,Virtual,Platform, https://www.shutterstock.com/image-photo/focused-millennial-african-american-student-260nw-1079701271.jpg,
-909,Ivy,RMIT,Doctorate,Community,Hybrid,Uni, https://media.istockphoto.com/id/1352606416/photo/young-woman-working-at-home-stock-photo.webp?b=1&s=170667a&w=0&k=20&c=aTxOyR5YvLeE447CR1QhUBoFLUoyaNTRqLiOktmCqaE=,
-110,Lucas,Monash,Undergrad,Community,Hybrid,Discipline, https://thumbs.dreamstime.com/b/high-school-student-29699566.jpg,
-121,Mila,Deakin,Postgrad,Projects,Virtual,Goal, https://st2.depositphotos.com/1518767/11489/i/450/depositphotos_114899664-stock-photo-stressed-woman-sitting-amidst-books.jpg,
-132,Noah,La Trobe,Doctorate,General,Physical,Uni,https://www.photocase.com/photos/2045859-smiling-boy-studying-sitting-on-a-chair-lifestyle-photocase-stock-photo-large.jpeg,
-143,Olivia,Swinburne,Undergrad,Community,Hybrid,Platform, https://as2.ftcdn.net/v2/jpg/01/48/13/17/1000_F_148131790_dkm5dYPZeg18QZh3RLDYADpAhMkx6rZZ.jpg,
-154,Peter,Unimelb,Postgrad,Projects,Virtual,Discipline, https://previews.123rf.com/images/dekanaryas/dekanaryas1308/dekanaryas130800035/21552288-portrait-of-a-smiling-boy-student-in-high-school.jpg,
-165,Quinn,RMIT,Doctorate,General,Physical,Goal, https://media.istockphoto.com/id/1365601848/photo/portrait-of-a-young-woman-carrying-her-schoolbooks-outside-at-college.jpg?s=612x612&w=0&k=20&c=EVxLUZsL0ueYFF1Nixit6hg-DkiV52ddGw_orw9BSJA=,
-176,Ruby,Deakin,Undergrad,Projects,Hybrid,Uni, https://media.sciencephoto.com/f0/25/45/03/f0254503-400px-wm.jpg,
-187,Sam,La Trobe,Postgrad,Community,Virtual,Platform, https://t4.ftcdn.net/jpg/02/90/50/77/360_F_290507722_aS2R6Oy5LBjNFxmKSpXubMYroaIyZURz.jpg,
-198,Tina,Monash,Doctorate,General,Physical,Discipline, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0ahRWYpJYtMwkUjkFj_rdfrE94vw5eSdkrhCob8CLxg&s,
-209,Uma,RMIT,Undergrad,Projects,Hybrid,Goal, https://thumbs.dreamstime.com/b/veiling-coed-protest-against-corruption-solo-city-slice-student-activists-were-interviewed-reporters-speech-front-35886723.jpg,
+id,name,uni,discipline,level,goal,platform,preference
+744218,Alice,Monash,STEM,Undergrad,Project work,Physical,University
+141981,Bob,Deakin,Arts,Postgrad,General study,Virtual,Discipline
+624417,Carol,Swinburne,Law,Doctorate,Community Building,Hybrid,Level
+396237,Dave,Latrobe,Design,Undergrad,Other,Physical,Goal
+232652,Eve,UniMelb,Business and Econ,Postgrad,Project work,Virtual,University
+575346,Frank,RMIT,STEM,Doctorate,General study,Hybrid,Discipline
+382511,Grace,Monash,Arts,Undergrad,Community Building,Physical,Level
+587979,Henry,Deakin,Law,Postgrad,Other,Virtual,Goal
+917394,Isla,Swinburne,Design,Doctorate,Project work,Hybrid,University
+800957,Jack,Latrobe,Business and Econ,Undergrad,General study,Physical,Discipline
+508586,Kate,UniMelb,STEM,Postgrad,Community Building,Virtual,Level
+917682,Liam,RMIT,Arts,Doctorate,Other,Hybrid,Goal
+113087,Mia,Monash,Law,Undergrad,Project work,Physical,University
+382597,Noah,Deakin,Design,Postgrad,General study,Virtual,Discipline
+575346,Olivia,Swinburne,Business and Econ,Doctorate,Community Building,Hybrid,Level
+591232,Peter,Latrobe,STEM,Undergrad,Other,Physical,Goal
+396348,Quinn,UniMelb,Arts,Postgrad,Project work,Virtual,University
+417370,Rachel,RMIT,Law,Doctorate,General study,Hybrid,Discipline
+141342,Sam,Monash,Design,Undergrad,Community Building,Physical,Level
+744219,Tina,Deakin,Business and Econ,Postgrad,Other,Virtual,Goal
