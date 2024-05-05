@@ -9,11 +9,12 @@ function Form() {
     const [level, setLevel] = useState('');
     const [discipline, setDiscipline] = useState('');
     const [platform, setPlatform] = useState([]);
+    const [preference, setPreference] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleNext = () => {
         if (isValidInput()) {
-            if (tabIndex < 4) {
+            if (tabIndex < 5) {
                 setTabIndex(tabIndex + 1);
                 setErrorMessage('');
             }
@@ -36,6 +37,7 @@ function Form() {
             case 2: return level !== '';
             case 3: return discipline !== '';
             case 4: return platform.length > 0;
+            case 5: return preference !== ''; // Check for preference input
             default: return false;
         }
     };
@@ -60,7 +62,7 @@ function Form() {
                     <input
                         type='range'
                         min='0'
-                        max='4'
+                        max='5'
                         value={tabIndex}
                         style={{ width: '100%' }}
                         onChange={() => {}} // This does nothing when slider is used
@@ -74,6 +76,7 @@ function Form() {
                         <Tab isDisabled>University Level</Tab>
                         <Tab isDisabled>Discipline</Tab>
                         <Tab isDisabled>Platform</Tab>
+                        <Tab isDisabled>Preference</Tab>
                     </TabList>
             
                     <TabPanels>
@@ -82,10 +85,12 @@ function Form() {
                                 <FormLabel htmlFor='university'>Choose University</FormLabel>
                                 <Select id='university' value={university} onChange={e => setUniversity(e.target.value)}>
                                     <option value=''>Select an option</option>
-                                    <option value='uni1'>RMIT University</option>
-                                    <option value='uni2'>Monash University</option>
-                                    <option value='uni3'>Deakin University</option>
-                                    <option value='uni3'>University of Melbourne</option>
+                                    <option value='RMIT'>RMIT University</option>
+                                    <option value='Monash'>Monash University</option>
+                                    <option value='Deakin'>Deakin University</option>
+                                    <option value='UniMelb'>University of Melbourne</option>
+                                    <option value='Latrbe'>LaTrobe University</option>
+                                    <option value='Swinburne'>Swinburne University</option>
                                 </Select>
                             </FormControl>
                         </TabPanel>
@@ -95,8 +100,10 @@ function Form() {
                                 <FormLabel htmlFor='goal'>Select Your Goal</FormLabel>
                                 <Select id='goal' value={goal} onChange={e => setGoal(e.target.value)}>
                                     <option value=''>Select an option</option>
-                                    <option value='buddy'>Find study buddies</option>
-                                    <option value='community'>Find a community</option>
+                                    <option value='general'>General Study</option>
+                                    <option value='community'>Community Building</option>
+                                    <option value='project'>Project Work</option>
+                                    <option value='other'>Other</option>
                                 </Select>
                             </FormControl>
                         </TabPanel>
@@ -118,11 +125,10 @@ function Form() {
                                 <FormLabel htmlFor='discipline'>Choose Discipline</FormLabel>
                                 <Select id='discipline' value={discipline} onChange={e => setDiscipline(e.target.value)}>
                                     <option value=''>Select an option</option>
-                                    <option value='science'>Science</option>
-                                    <option value='engineering'>Engineering</option>
+                                    <option value='stem'>STEM</option>
+                                    <option value='art'>Art</option>
                                     <option value='law'>Law</option>
                                     <option value='business'>Business & Economics</option>
-                                    <option value='comp'>Computer Science & IT</option>
                                 </Select>
                             </FormControl>
                         </TabPanel>
@@ -130,9 +136,21 @@ function Form() {
                         <TabPanel>
                             <FormControl>
                                 <FormLabel htmlFor='platform'>Select Platform</FormLabel>
-                                <Checkbox isChecked={platform.includes('online')} onChange={() => handleCheckboxChange('online')}>Online</Checkbox>
-                                <Checkbox isChecked={platform.includes('offline')} onChange={() => handleCheckboxChange('offline')}>On Campus</Checkbox>
+                                <Checkbox isChecked={platform.includes('online')} onChange={() => handleCheckboxChange('online')}>Virtual</Checkbox>
+                                <Checkbox isChecked={platform.includes('offline')} onChange={() => handleCheckboxChange('offline')}>Physical</Checkbox>
                                 <Checkbox isChecked={platform.includes('hybrid')} onChange={() => handleCheckboxChange('hybrid')}>Hybrid</Checkbox>
+                            </FormControl>
+                        </TabPanel>
+                            <TabPanel>
+                            <FormControl>
+                                <FormLabel htmlFor='preference'>Select Your Preference</FormLabel>
+                                <Select id='preference' value={preference} onChange={e => setPreference(e.target.value)}>
+                                    <option value=''>Select an option</option>
+                                    <option value='university'>University</option>
+                                    <option value='discipline'>Discipline</option>
+                                    <option value='level'>Level</option>
+                                    <option value='goal'>Goal</option>
+                                </Select>
                             </FormControl>
                         </TabPanel>
                     </TabPanels>
@@ -140,7 +158,7 @@ function Form() {
                 {errorMessage && <Text color="#F7418F" mb="4">{errorMessage}</Text>}
                 <Box display="flex" justifyContent="space-between" mt="4">
                     <Button colorScheme="pink" variant="outline" onClick={handleBack} isDisabled={tabIndex === 0}>Back</Button>
-                    <Button colorScheme="pink" onClick={handleNext}>Next</Button>
+                    <Button colorScheme="pink" onClick={handleNext} isDisabled={tabIndex === 5}>Next</Button>
                 </Box>
             </Box>
         </Container>
@@ -148,4 +166,3 @@ function Form() {
 }
 
 export default Form;
-
