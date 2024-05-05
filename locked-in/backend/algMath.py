@@ -62,3 +62,4 @@ def calcCosineSimilarity(userA, userB, ):
         similarity = sumNumerator / sumDenominator
         similarity = abs(similarity)
     return similarity
+

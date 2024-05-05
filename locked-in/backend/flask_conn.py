@@ -17,6 +17,16 @@ def execute():
         return jsonify({'stdout': stdout, 'stderr': stderr})
     except subprocess.CalledProcessError as e:
         return jsonify({'error': str(e)})
+    
+@app.route("/array")
+def array():
+    result = []
+    with open(r"C:\Users\facep\Documents\AA project\Hackathon\LockedIn\locked-in\src\data\data.csv", 'r') as f:
+        lines = f.readlines()[1:]
+        for line in lines:
+            line = line.strip().split(',')
+            result.append(line)
+    return jsonify(result)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
