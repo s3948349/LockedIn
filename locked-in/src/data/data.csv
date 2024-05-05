@@ -1,2 +1,20 @@
-ID, Name, Password, Uni, Course, Year, Goals, Platform
-0, 'Admin','Password', 'RMIT', 'Computer Science', 1, 'Project', 'Online'
+id,name,uni,discipline,goal,platform,preference
+101,Anna,monash,undergrad,projects,physical,uni
+202,Ben,deakin,postgrad,general,virtual,discipline
+303,Chloe,swni,doctrate,community,hybrid,goal
+404,Dan,latrobe,undergrad,projects,physical,platform
+505,Ella,unimelb,postgrad,general,virtual,uni
+606,Frank,rmit,doctrate,community,hybrid,discipline
+707,Grace,deakin,undergrad,projects,physical,goal
+808,Hugo,monash,postgrad,general,virtual,platform
+909,Ivy,rmit,doctrate,community,hybrid,uni
+110,Lucas,monash,undergrad,community,hybrid,discipline
+121,Mila,deakin,postgrad,projects,virtual,goal
+132,Noah,latrobe,doctrate,general,physical,uni
+143,Olivia,swni,undergrad,community,hybrid,platform
+154,Peter,unimelb,postgrad,projects,virtual,discipline
+165,Quinn,rmit,doctrate,general,physical,goal
+176,Ruby,deakin,undergrad,projects,hybrid,uni
+187,Sam,latrobe,postgrad,community,virtual,platform
+198,Tina,monash,doctrate,general,physical,discipline
+209,Uma,rmit,undergrad,projects,hybrid,goal
