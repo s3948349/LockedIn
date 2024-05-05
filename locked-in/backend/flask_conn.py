@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import subprocess
 from flask_cors import CORS
 
@@ -35,7 +35,8 @@ def array():
             result.append(line)
     return jsonify(result)
 
-@app.route("/write", methods =['POST'])
+
+@app.route("/write", methods=['POST'])
 def write():
     name = request.json['name']
     uni = request.json['uni']
@@ -46,8 +47,10 @@ def write():
     preference = request.json['preference']
 
     with open(r"../src/data/data.csv", 'a', newline='') as f:
-        f.write(f"{name},{uni},{discipline},{level},{goal},{platform},{preference}\n")
+        f.write(
+            f"{name},{uni},{discipline},{level},{goal},{platform},{preference}\n")
     return jsonify({'message': 'Data written successfully'})
+
 
 if __name__ == '__main__':
     app.run(debug=True)

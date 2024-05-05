@@ -26,6 +26,12 @@ function Cards() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [students, setStudents] = useState([]);
   
+    const getRandomMatchPercentage = () => {
+        return Math.floor(Math.random() * 101); // Generates a random number between 0 and 100
+      };
+    //id,name,uni,discipline,level,goal,platform,preference
+    const [matchPercentage, setMatchPercentage] = useState(getRandomMatchPercentage());
+
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -35,10 +41,11 @@ function Cards() {
             name: student[1],
             university: student[2],
             discipline: student[3],
-            goal: student[4],
-            platform: student[5],
-            preferance: student[6],
-            imageUrl: student[7],
+            level: student[4],
+            goal: student[5],
+            platform: student[6],
+            preference : student[7],
+            imageUrl: student[8],
           }));
           setStudents(formattedStudents);
         } catch (error) {
@@ -66,8 +73,8 @@ function Cards() {
         }
         else {
             alert("No more users");
-            setCurrentIndex(0); // Reset to the beginning or handle appropriately
-            }
+        setCurrentIndex(0); // Reset to the beginning or handle appropriately
+              }
     };
   
     const randomPosition = () => `${Math.floor(Math.random() * 100)}%`;
@@ -83,7 +90,7 @@ function Cards() {
   
     // Check if currentStudent is defined
     if (!currentStudent) {
-      return <div>Loading...</div>; // Show a loading or placeholder message/component
+      return <div>Loading...</div>;
     }
   
     return (
@@ -115,14 +122,14 @@ function Cards() {
                     <Image
                       className="Image"
                       src={currentStudent.imageUrl || 'https://via.placeholder.com/150'}
-                      alt={currentStudent.description}
+                      alt={currentStudent.imageUrl}
                       borderRadius="lg"
                     />
                   </Box>
   
                   <Stack mt="6" spacing="3">
                     <Heading className="Heading">
-                      {`${currentStudent.name} - 50% Study Buddy Match!`}
+                      {`${currentStudent.name} - ${matchPercentage}% Study Buddy Match!`}
                     </Heading>
                     <Text className="Text">Hi there, I am currenly an {currentStudent.discipline} student looking to find study buddies for {currentStudent.goal}. I would like to study {currentStudent.platform}.</Text>
                   </Stack>

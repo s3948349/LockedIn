@@ -1,10 +1,13 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Select, FormControl, FormLabel, Checkbox, Button, Text, Container } from '@chakra-ui/react'
+import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Select, FormControl, FormLabel, Checkbox, Button, Text, Container, Input } from '@chakra-ui/react';
 import './App.css';
+import axios from "axios";
+
 
 function Form() {
     const [tabIndex, setTabIndex] = useState(0);
+    const [name, setName] = useState(''); // State to store the name of the user
     const [university, setUniversity] = useState('');
     const [goal, setGoal] = useState('');
     const [level, setLevel] = useState('');
@@ -12,6 +15,14 @@ function Form() {
     const [platform, setPlatform] = useState([]);
     const [preference, setPreference] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+
+    const runFunction = async (name, university, goal, level, discipline, platform, preference) => {
+        try {
+          const response = await axios.post('http://127.0.0.1:5000/write', {name, university, goal, level, discipline, platform, preference});
+        } catch (error) {
+          console.error('Error running function:', error);
+        }
+      };
 
     function generateRandomID() {
         const randomID = Math.floor(100000 + Math.random() * 900000);
@@ -24,13 +35,13 @@ function Form() {
     const navigate = useNavigate();
 
     const goToCards = () => {
-        navigate("/Cards") ;   
+        runFunction(name, university, goal, level, discipline, platform, preference);
+        navigate("/Cards");   
     }
-
 
     const handleNext = () => {
         if (isValidInput()) {
-            if (tabIndex < 5) {
+            if (tabIndex < 6) {
                 setTabIndex(tabIndex + 1);
                 setErrorMessage('');
             }
@@ -48,12 +59,13 @@ function Form() {
 
     const isValidInput = () => {
         switch (tabIndex) {
-            case 0: return university !== '';
-            case 1: return goal !== '';
-            case 2: return level !== '';
-            case 3: return discipline !== '';
-            case 4: return platform.length > 0;
-            case 5: return preference !== ''; // Check for preference input
+            case 0: return name !== '';
+            case 1: return university !== '';
+            case 2: return goal !== '';
+            case 3: return level !== '';
+            case 4: return discipline !== '';
+            case 5: return platform.length > 0;
+            case 6: return preference !== ''; // Check for preference input
             default: return false;
         }
     };
@@ -78,7 +90,7 @@ function Form() {
                     <input
                         type='range'
                         min='0'
-                        max='5'
+                        max='6'
                         value={tabIndex}
                         style={{ width: '100%' }}
                         onChange={() => {}} // This does nothing when slider is used
@@ -87,6 +99,7 @@ function Form() {
             
                 <Tabs index={tabIndex} onChange={() => {}} variant="soft-rounded" colorScheme="pink">
                     <TabList mb="1em">
+                        <Tab isDisabled>Your Name</Tab>
                         <Tab isDisabled>University</Tab>
                         <Tab isDisabled>Goal</Tab>
                         <Tab isDisabled>University Level</Tab>
@@ -98,20 +111,24 @@ function Form() {
                     <TabPanels>
                         <TabPanel>
                             <FormControl>
+                                <FormLabel htmlFor='name'>Enter Your Name</FormLabel>
+                                <Input id='name' value={name} onChange={e => setName(e.target.value)} placeholder="Your Name" />
+                            </FormControl>
+                        </TabPanel>
+                        <TabPanel>
+                            <FormControl>
                                 <FormLabel htmlFor='university'>Choose University</FormLabel>
-                                <Select id='university' value={university} onChange={e => setUniversity(e.target.value)} 
-                                className="custom-dropdown">
+                                <Select id='university' value={university} onChange={e => setUniversity(e.target.value)} className="custom-dropdown">
                                     <option value=''>Select an option</option>
                                     <option value='RMIT'>RMIT University</option>
                                     <option value='Monash'>Monash University</option>
                                     <option value='Deakin'>Deakin University</option>
                                     <option value='UniMelb'>University of Melbourne</option>
-                                    <option value='Latrbe'>LaTrobe University</option>
+                                    <option value='Latrobe'>LaTrobe University</option>
                                     <option value='Swinburne'>Swinburne University</option>
                                 </Select>
                             </FormControl>
                         </TabPanel>
-
                         <TabPanel>
                             <FormControl>
                                 <FormLabel htmlFor='goal'>Select Your Goal</FormLabel>
@@ -179,7 +196,7 @@ function Form() {
                 {errorMessage && <Text color="#F7418F" mb="4">{errorMessage}</Text>}
                 <Box display="flex" justifyContent="space-between" mt="4">
                     <Button colorScheme="pink" variant="outline" onClick={handleBack} isDisabled={tabIndex === 0}>Back</Button>
-                    <Button colorScheme="pink" onClick={tabIndex === 5 ? goToCards : handleNext} isDisabled={tabIndex === 6}>Next</Button>                
+                    <Button colorScheme="pink" onClick={tabIndex === 6 ? goToCards : handleNext} isDisabled={false}>Next</Button>
             </Box>
             </Box>
         </Container>
