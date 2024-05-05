@@ -21,7 +21,7 @@ def execute():
 @app.route("/array")
 def array():
     result = []
-    with open(r"C:\Users\facep\Documents\AA project\Hackathon\LockedIn\locked-in\src\data\data.csv", 'r') as f:
+    with open(r"../src/data/data.csv", 'r') as f:
         lines = f.readlines()[1:]
         for line in lines:
             line = line.strip().split(',')
